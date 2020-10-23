@@ -12,24 +12,24 @@ def main():
     Render a template and write it to file.
     :return:
     """
-
-    ################ precisamos obter o numero de revisoes
-    nREVS = 5 # -> REV0 ... REV4
-
+    out_dir = r'C:\Users\yoshidaa\OneDrive - Simple Energy\Documentos\Projetos\Report_generator\HTML'
 
 
     jinja_var  = {
-        'content' : 'a',
-        'imagem1': 'figuras/figureREV1SIN.png',
-        'imagem2':'figuras/diffsREV1.png',
-        'imagem3':'figuras/TabelasRev1.png'
+        'hoje': '23/10',
+        'ontem': '22/10',
+        'ecmwf_hoje' : [1,2,3,4,5,6,7,8,9],
+        'ecmwf_ontem': [10,2,3,4,5,6,7,8,9],
+        'gefs_hoje':[1,5,3,4,5,6,7,8,9],
+        'gefs_ontem':[162,2,3,4,5,6,7,8,9]
     }
 
     env = Environment(
         loader=FileSystemLoader(searchpath="./")
     )
-
-    template = env.get_template("report2.html")
+    
+    os.chdir(out_dir)
+    template = env.get_template("template.html")
 
     with open("outer.html", "w") as f:
          f.write(template.render(jinja_var))
