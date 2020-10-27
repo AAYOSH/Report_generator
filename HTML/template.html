@@ -17,16 +17,107 @@
         .table-condensed{
           font-size: 15px;
         }
+        .table{
+        
+           width:auto;
+           margin:0 auto;
+        }
     </style>
   </head>
   
   <body>
     <div class="table-responsive">
-        <table class="table table-condensed">
+
+            <table class="table table-bordered table-striped table-sm table-condensed w-auto">
+            <caption> Rodada X</caption>
+            <thead class="thead-dark">
+                <tr>
+                  <th colspan = '14' style='text-align:center;'>Modelo ECMWF</th>                      
+                </tr>
+              </thead>
+              <thead class="thead-light">
+                <tr>
+                  <th>Data | Rodada</th>
+                  <th>Grande</th>
+                  <th>Baixo Paraná</th>
+                  <th>Alto Paraná</th>
+                  <th>Paranaíba</th>
+                  <th>Paranapanema</th>
+                  <th>Tietê</th>
+                  <th>São Francisco</th>
+                  <th>Tocantins</th>
+                  <th>Sudeste</th>
+                  <th>Iguacu</th> 
+                  <th>Uruguai</th> 
+                  <th>Jacui</th> 
+                  <th>Sul</th>   
+                               
+                </tr>
+              </thead>                   
+              <tbody>
+                <tr>
+                  <th>{{hoje }} | 00z</th>
+                  {% for x in ecmwf_hoje%}
+                      <td style='text-align:center;'>{{x}}</td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                   <th>{{ontem}} | 00z</th>
+                  {% for x in ecmwf_ontem%}
+                      <td style='text-align:center;'>{{x}}</td>
+                  {% endfor %}
+                </tr>
+              </tbody>    
+            </table>
+             
+           
+             <table class="table table-bordered table-striped table-sm table-condensed w-auto">
+            <caption> Rodada X</caption>
+            <thead class="thead-dark">
+                <tr>
+                  <th colspan = '14' style='text-align:center;' >Modelo GEFS</th>                      
+                </tr>
+              </thead>
+              <thead class="thead-light">
+                <tr>
+                  <th>Data | Rodada</th>
+                  <th>Grande</th>
+                  <th>Baixo Paraná</th>
+                  <th>Alto Paraná</th>
+                  <th>Paranaíba</th>
+                  <th>Paranapanema</th>
+                  <th>Tietê</th>
+                  <th>São Francisco</th>
+                  <th>Tocantins</th>
+                  <th>Sudeste</th>
+                  <th>Iguacu</th> 
+                  <th>Uruguai</th> 
+                  <th>Jacui</th> 
+                  <th>Sul</th>              
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <th>{{hoje }} | 00z</th>
+                  {% for x in gefs_hoje%}
+                      <td style='text-align:center;'>{{x}}</td>
+                  {% endfor %}
+                </tr>
+                <tr>
+                   <th>{{ontem}} | 00z</th>
+                  {% for x in gefs_ontem%}
+                      <td style='text-align:center;'>{{x}}</td>
+                  {% endfor %}
+                </tr>
+              </tbody>
+            </table>
+       
+     
+        <table class="table table-bordered table-striped table-sm table-condensed">
         <caption> Rodada X</caption>
         <thead class="thead-dark">
             <tr>
-              <th colspan = '10' style='text-align:center;'>Modelo ECMWF</th>                      
+              <th colspan = '14' style='text-align:center;' >Modelo GFS</th>                      
             </tr>
           </thead>
           <thead class="thead-light">
@@ -40,44 +131,11 @@
               <th>Tietê</th>
               <th>São Francisco</th>
               <th>Tocantins</th>
-              <th>Sudeste</th>              
-            </tr>
-          </thead>                   
-          <tbody>
-            <tr>
-              <th>{{hoje }} | 00z</th>
-              {% for x in ecmwf_hoje%}
-                  <td style='text-align:center;'>{{x}}</td>
-              {% endfor %}
-            </tr>
-            <tr>
-               <th>{{ontem}} | 00z</th>
-              {% for x in ecmwf_ontem%}
-                  <td style='text-align:center;'>{{x}}</td>
-              {% endfor %}
-            </tr>
-          </tbody>    
-        </table>
-        
-         <table class="table table-bordered table-striped table-sm table-condensed">
-        <caption> Rodada X</caption>
-        <thead>
-            <tr>
-              <th colspan = '10' style='text-align:center;color: white;' bgcolor="BLUE">Modelo GEFS</th>                      
-            </tr>
-          </thead>
-          <thead class="thead-light">
-            <tr bgcolor="BLUE" >
-              <th>Data | Rodada</th>
-              <th>Grande</th>
-              <th>Baixo Paraná</th>
-              <th>Alto Paraná</th>
-              <th>Paranaíba</th>
-              <th>Paranapanema</th>
-              <th>Tietê</th>
-              <th>São Francisco</th>
-              <th>Tocantins</th>
-              <th>Sudeste</th>              
+              <th>Sudeste</th>
+              <th>Iguacu</th> 
+              <th>Uruguai</th> 
+              <th>Jacui</th> 
+              <th>Sul</th>              
             </tr>
           </thead>
           <tbody>
@@ -95,10 +153,90 @@
             </tr>
           </tbody>
         </table>
-       
-      
+   
+    
+        <table class="table table-bordered table-striped table-sm table-condensed">
+        <caption> Rodada X</caption>
+        <thead class="thead-dark">
+            <tr>
+              <th colspan = '14' style='text-align:center;' >Modelo ONS (ECMWF + ETA) </th>                      
+            </tr>
+          </thead>
+          <thead class="thead-light">
+            <tr>
+              <th>Data | Rodada</th>
+              <th>Grande</th>
+              <th>Baixo Paraná</th>
+              <th>Alto Paraná</th>
+              <th>Paranaíba</th>
+              <th>Paranapanema</th>
+              <th>Tietê</th>
+              <th>São Francisco</th>
+              <th>Tocantins</th>
+              <th>Sudeste</th>
+              <th>Iguacu</th> 
+              <th>Uruguai</th> 
+              <th>Jacui</th> 
+              <th>Sul</th>              
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <th>{{hoje }} | 00z</th>
+              {% for x in gefs_hoje%}
+                  <td style='text-align:center;'>{{x}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+               <th>{{ontem}} | 00z</th>
+              {% for x in gefs_ontem%}
+                  <td style='text-align:center;'>{{x}}</td>
+              {% endfor %}
+            </tr>
+          </tbody>
+        </table>    
         
-        
+        <table class="table table-bordered table-striped table-sm table-condensed">
+        <caption> Rodada X</caption>
+        <thead class="thead-dark">
+            <tr>
+              <th colspan = '14' style='text-align:center;' >Chuva dia D </th>                      
+            </tr>
+          </thead>
+          <thead class="thead-light">
+            <tr>
+              <th>Realizado/Previsão</th>
+              <th>Grande</th>
+              <th>Baixo Paraná</th>
+              <th>Alto Paraná</th>
+              <th>Paranaíba</th>
+              <th>Paranapanema</th>
+              <th>Tietê</th>
+              <th>São Francisco</th>
+              <th>Tocantins</th>
+              <th>Sudeste</th>
+              <th>Iguacu</th> 
+              <th>Uruguai</th> 
+              <th>Jacui</th> 
+              <th>Sul</th>              
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+              <th>{{hoje }} | 00z</th>
+              {% for x in gefs_hoje%}
+                  <td style='text-align:center;'>{{x}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+               <th>{{ontem}} | 00z</th>
+              {% for x in gefs_ontem%}
+                  <td style='text-align:center;'>{{x}}</td>
+              {% endfor %}
+            </tr>
+          </tbody>
+        </table>    
+          
     </div>
     
     

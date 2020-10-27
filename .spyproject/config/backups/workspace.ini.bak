@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['Codigo\\main.py', 'HTML\\base.html']
+recent_files = ['Codigo\\main.py', 'HTML\\template.html', '..\\Prototipagem\\jinjaHTML\\report2.html', '..\\Prototipagem\\jinjaHTML\\report.html', 'HTML\\css\\bootstrap.css']
 
